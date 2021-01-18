@@ -2,6 +2,12 @@
 
 Use at your own risk. I'm not responsible for any damage this may cause to your files. Make sure to have a backup.
 
+# About KeyHelp
+KeyHelp is completely Free web hosting control panel. More details
+https://www.keyweb.de/en/keyhelp
+
+I'm not affiliated with KeyHelp.
+
 # KeyHelp-fixperms
 A based on [cPanel-fixperms](https://github.com/PeachFlame/cPanel-fixperms) script to fix permissions and ownership, on files and directories, for KeyHelp accounts.
 
