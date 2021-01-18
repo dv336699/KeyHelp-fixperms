@@ -1,6 +1,6 @@
 # Attention
 
-Use ate your own risk. I'm not responsible for any damage this may cause to your files. Make sure to have a backup.
+Use at your own risk. I'm not responsible for any damage this may cause to your files. Make sure to have a backup.
 
 # KeyHelp-fixperms
 A based on [cPanel-fixperms](https://github.com/PeachFlame/cPanel-fixperms) script to fix permissions and ownership, on files and directories, for KeyHelp accounts.
