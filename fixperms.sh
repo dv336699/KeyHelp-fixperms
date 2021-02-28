@@ -56,15 +56,13 @@ fixperms () {
   else
 
     #Get the account's homedir
-    HOMEDIR=$(egrep "^amelia:" /etc/passwd | cut -d: -f6)
+    HOMEDIR=$(egrep "^$account:" /etc/passwd | cut -d: -f6)
 
     tput bold
-    tput setaf 4
-    echo "Fixing perms for $account:"
     tput setaf 3
     echo "------------------------"
     tput setaf 4
-    echo "Fixing website files...."
+    echo "Fixing website files ${HOMEDIR}www"
     tput sgr0
     
     #Fix individual files in www
@@ -74,7 +72,7 @@ fixperms () {
     # Hidden files support: https://serverfault.com/a/156481
     # fix hidden files and folders like .well-known/ with root or other user perms
     chown $verbose -R $account:$account ${HOMEDIR}www/.*
-    chown $verbose -R $account:$account ${HOMEDIR}www
+    chown $verbose -R $account:$account ${HOMEDIR}www/*/.*
     find ${HOMEDIR}/* -name .htaccess -exec chown $verbose $account.$account {} \;
 
     tput bold
