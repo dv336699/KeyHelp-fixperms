@@ -67,7 +67,7 @@ fixperms () {
     
     #Fix individual files in www
     find ${HOMEDIR}www -type d -exec chmod $verbose 755 {} \;
-    find ${HOMEDIR}www -type f | xargs -d$'\n' -r chmod $verbose 644
+    find ${HOMEDIR}www -type f -exec chmod $verbose 644 {} \;
     find ${HOMEDIR}www -name '*.cgi' -o -name '*.pl' | xargs -r chmod $verbose 755
     # Hidden files support: https://serverfault.com/a/156481
     # fix hidden files and folders like .well-known/ with root or other user perms
@@ -97,9 +97,12 @@ fixperms () {
 
 #Parses all users through KeyHelp's users file
 all () {
-    for user in $(egrep "^${account}:" /etc/passwd | cut -d: -f6)
+    for user in $(cut -d: -f1 /etc/passwd)
     do
-  fixperms $user
+      if [ -d "/home/users/$user/www" ]
+      then
+      fixperms $user
+      fi
     done
 }
 
@@ -131,7 +134,7 @@ case "$1" in
     -all) all
     ;;
     --account) fixperms "$2"
-          ;;
+    ;;
     -a) fixperms "$2"
   ;;
     *)
