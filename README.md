@@ -21,7 +21,7 @@ Ever needed just to quickly 'fix' the permissions or ownership for your files in
 To get the `fixperms` script, simply wget the file from GitHub and make sure it's executable:
 
 ```bash
-curl -Ssl https://raw.githubusercontent.com/diego-vieira/KeyHelp-fixperms/master/fixperms.sh > fixperms.sh
+curl -Ssl https://raw.githubusercontent.com/dv336699/KeyHelp-fixperms/master/fixperms.sh > fixperms.sh
 chmod +x fixperms.sh
 ```
 
